@@ -1,1 +1,23 @@
 
+# .readthedocs.yaml
+
+version: 2  # Configuration file version
+build:
+  os: ubuntu-22.04
+  tools:
+    nodejs: "18"  # Specify the Node.js version (adjust as needed)
+sphinx:
+  configuration: docs/conf.py  # If using Sphinx, point to its config
+formats:
+  - html  # Default format for web documentation
+  - pdf  # Optional: Add if you want PDF output
+python:
+  install:
+    - requirements: docs/requirements.txt  # Only needed if Python tools are used (e.g., Sphinx or MkDocs)
+
+# Build commands (adapt to your project’s tools)
+build:
+  commands:
+    - cd docs  # Navigate to your documentation folder
+    - npm install  # Install dependencies for building docs
+    - npm run build  # Build the documentation (replace with your custom command if needed)
